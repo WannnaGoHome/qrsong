@@ -1,12 +1,8 @@
-const wrapper = document.querySelector(".wrapper");
-const secondPage = document.querySelector(".second-page");
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 
 yesBtn.addEventListener("click", () => {
-  wrapper.classList.add("hidden"); 
-  secondPage.classList.remove("hidden"); 
-  history.pushState({ page: 2 }, "Second Page", "#second"); 
+  window.location.href = "second.html"; 
 });
 
 function moveNoButton() {
@@ -24,15 +20,4 @@ function moveNoButton() {
 }
 
 noBtn.addEventListener("mouseover", moveNoButton);
-
 noBtn.addEventListener("touchstart", moveNoButton);
-
-window.addEventListener("popstate", (event) => {
-  if (event.state && event.state.page === 2) {
-    wrapper.classList.add("hidden");
-    secondPage.classList.remove("hidden");
-  } else {
-    wrapper.classList.remove("hidden");
-    secondPage.classList.add("hidden");
-  }
-});
