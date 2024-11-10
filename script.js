@@ -9,7 +9,7 @@ yesBtn.addEventListener("click", () => {
   history.pushState({ page: 2 }, "Second Page", "#second"); 
 });
 
-noBtn.addEventListener("mouseover", () => {
+function moveNoButton() {
   const noBtnRect = noBtn.getBoundingClientRect();
 
   const maxX = window.innerWidth - noBtnRect.width;
@@ -21,7 +21,11 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.position = "absolute";
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
-});
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+
+noBtn.addEventListener("touchstart", moveNoButton);
 
 window.addEventListener("popstate", (event) => {
   if (event.state && event.state.page === 2) {
