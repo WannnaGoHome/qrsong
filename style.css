@@ -1,37 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,600&display=swap');
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url('photo1.jpg') no-repeat center center/cover;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: url('photo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+}
 
-  .lyrics {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: auto;
-    margin-top: auto;
-  }
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+}
 
-  .lyrics span {
-    display: block;
-    margin: 10px 0;
-  }
+.branding {
+  font-size: 33.9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin-top: 10px;
+}
 
-  .player {
-    position: absolute;
-    bottom: 40px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 10px;
-  }
+h1 {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 31.9px;
+  color: #FFFFFF;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  margin: 20px 0;
+  line-height: 1.4;
+}
 
-  audio {
-    width: 300px;
-  }
+.main-image {
+  width: 621px;
+  height: 621px;
+  background: url('photo.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  margin: 0 auto 20px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 32px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.progress {
+  width: 709px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.progress::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+
+.controls img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.qr {
+  width: 70px;
+  height: 70px;
+  margin-top: auto;
+  opacity: 0.9;
+}

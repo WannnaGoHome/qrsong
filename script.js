@@ -1,23 +1,34 @@
-const yesBtn = document.querySelector(".yes-btn");
-const noBtn = document.querySelector(".no-btn");
+const playPauseBtn = document.getElementById('playPauseBtn');
+const progressBar = document.querySelector('.progress-bar');
 
-yesBtn.addEventListener("click", () => {
-  window.location.href = "second.html"; 
+let isPlaying = false;
+let progress = 0;
+let interval;
+
+playPauseBtn.addEventListener('click', () => {
+  isPlaying = !isPlaying;
+
+  if (isPlaying) {
+    playPauseBtn.src = 'icons/pause.png';
+    interval = setInterval(() => {
+      progress += 0.5;
+      if (progress > 100) progress = 0;
+      progressBar.style.width = `${progress}%`;
+    }, 200);
+  } else {
+    playPauseBtn.src = 'icons/play.png';
+    clearInterval(interval);
+  }
 });
 
-function moveNoButton() {
-  const noBtnRect = noBtn.getBoundingClientRect();
-
-  const maxX = window.innerWidth - noBtnRect.width;
-  const maxY = window.innerHeight - noBtnRect.height;
-
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
-
-  noBtn.style.position = "absolute";
-  noBtn.style.left = `${randomX}px`;
-  noBtn.style.top = `${randomY}px`;
-}
-
-noBtn.addEventListener("mouseover", moveNoButton);
-noBtn.addEventListener("touchstart", moveNoButton);
+document.querySelectorAll('.control-btn').forEach(btn => {
+  btn.addEventListener('mousedown', () => {
+    btn.style.transform = 'scale(0.9)';
+  });
+  btn.addEventListener('mouseup', () => {
+    btn.style.transform = 'scale(1)';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'scale(1)';
+  });
+});
