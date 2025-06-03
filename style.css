@@ -21,7 +21,6 @@ body, html {
     box-sizing: border-box;
   }
   
-  /* Размытие и затемнение заднего фона */
   .background-blur {
     position: absolute;
     top: 0;
@@ -47,7 +46,7 @@ body, html {
   }
   
   h1 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -59,21 +58,21 @@ body, html {
   }
   
   .main-image {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background-image: url('photo.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    margin: 30px 0;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
     z-index: 1;
     position: relative;
   }
   
   .subtitle {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 26px;
     color: white;
     margin: 20px 0;
     font-weight: bold;
@@ -82,12 +81,12 @@ body, html {
   }
   
   .progress {
-    width: 80%;
-    max-width: 400px;
-    height: 4px;
+    width: 85%;
+    max-width: 500px;
+    height: 6px;
     background: rgba(255,255,255,0.3);
     position: relative;
-    margin: 20px 0;
+    margin: 25px 0;
     z-index: 1;
   }
   
@@ -102,11 +101,11 @@ body, html {
   }
   
   .controls-wrapper {
-    width: 80%;
-    max-width: 400px;
+    width: 85%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 25px;
     z-index: 1;
     position: relative;
   }
@@ -119,24 +118,24 @@ body, html {
   }
   
   .control-btn {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    opacity: 0.8;
+    opacity: 0.85;
+  }
+  
+  .control-btn.play {
+    width: 90px;
+    height: 90px;
   }
   
   .control-btn:hover {
     opacity: 1;
   }
   
-  .control-btn.play {
-    width: 70px;
-    height: 70px;
-  }
-  
   .qr {
-    width: 80px;
+    width: 90px;
     position: absolute;
     bottom: 20px;
     right: 20px;
