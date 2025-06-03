@@ -5,6 +5,7 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     background: #000;
     color: white;
+    overflow: hidden;
   }
   
   .overlay {
@@ -16,59 +17,57 @@ body, html {
     background-image: url('photo.jpg');
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   .branding {
-    font-size: 33.9px;
+    font-size: 24px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.6);
     text-align: center;
-    margin-top: 20px;
-  }
-  
-  .centered-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
   }
   
   h1 {
-    font-size: 31.9px;
+    font-size: 28px;
     font-weight: bold;
-    font-style: italic;
     text-align: center;
     color: white;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    line-height: 1.3;
     text-shadow: 0 0 10px rgba(255,255,255,0.3);
   }
   
   .main-image {
-    width: 621px;
-    height: 621px;
+    width: 300px;
+    height: 300px;
     background-image: url('photo.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    border-radius: 10px;
     margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
   }
   
   .subtitle {
     text-transform: uppercase;
-    font-size: 32px;
+    font-size: 24px;
     color: white;
-    margin-bottom: 10px;
+    margin: 20px 0;
+    font-weight: bold;
   }
   
   .progress {
-    width: 709px;
+    width: 80%;
+    max-width: 400px;
     height: 4px;
-    background: white;
+    background: rgba(255,255,255,0.3);
     position: relative;
-    margin: 10px 0;
+    margin: 20px 0;
   }
   
   .progress-bar {
@@ -82,10 +81,11 @@ body, html {
   }
   
   .controls-wrapper {
-    width: 709px;
+    width: 80%;
+    max-width: 400px;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   
   .controls {
@@ -96,20 +96,26 @@ body, html {
   }
   
   .control-btn {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     transition: transform 0.2s ease;
+    opacity: 0.8;
   }
   
-  .control-btn:active {
-    transform: scale(0.9);
+  .control-btn:hover {
+    opacity: 1;
+  }
+  
+  .control-btn.play {
+    width: 70px;
+    height: 70px;
   }
   
   .qr {
-    width: 100px;
+    width: 80px;
     position: absolute;
     bottom: 20px;
     right: 20px;
+    opacity: 0.7;
   }
-  
